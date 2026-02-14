@@ -6,11 +6,14 @@
     <title>Matcon Productions | Creative Digital Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/styles/styles.css">
 </head>
 <body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -18,34 +21,42 @@
                 <div class="logo">
                     <img src="./assets/img/logo.webp" alt="Matcon Productions" class="logo-image">
                 </div>
-                <div class="tagline">
-                    <p>Creative Digital Solutions</p>
-                </div>
+                <nav class="nav-menu" aria-label="Main navigation">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#ventures" class="nav-link">Ventures</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-headline">Crafting Digital Experiences</h2>
-                <p class="hero-subtext">Innovative solutions for education, media, and property industries</p>
-                <a href="#contact" class="hero-cta">Get In Touch</a>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-headline">Crafting Digital Experiences</h1>
+                    <p class="hero-subtext">Innovative solutions for education, media, and property industries</p>
+                    <a href="#contact" class="hero-cta">Get In Touch</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Snapshot Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-intro">
-                <h2>About Matcon Productions</h2>
-                <p>We are a creative digital agency specializing in delivering innovative solutions across multiple sectors. With a focus on quality and creativity, we help our clients achieve their digital goals through cutting-edge technology and design.</p>
-            </div>
+        <!-- About Snapshot Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-intro">
+                    <h2>About Matcon Productions</h2>
+                    <p>We are a creative digital agency specializing in delivering innovative solutions across multiple sectors. With a focus on quality and creativity, we help our clients achieve their digital goals through cutting-edge technology and design.</p>
+                </div>
 
-            <div class="services-grid">
+                <div class="services-grid" id="services">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
@@ -73,10 +84,10 @@
         </div>
     </section>
 
-    <!-- Ventures Section -->
-    <section class="ventures-section">
-        <div class="container">
-            <h2>Our Ventures</h2>
+        <!-- Ventures Section -->
+        <section class="ventures-section" id="ventures">
+            <div class="container">
+                <h2>Our Ventures</h2>
             <p class="section-subtitle">Explore our flagship projects</p>
 
             <div class="ventures-grid">
@@ -116,26 +127,33 @@
                 <div class="contact-info">
                     <h2>Get in touch</h2>
                     <p class="contact-subtitle">WE BELIEVE IN<br>INNOVATION AND<br>CREATIVE PROBLEM<br>SOLVING.</p>
-                    <p class="contact-description">Etiam sit amet convallis erat - class aptent taciti sociosqu ad litora torquent per conubia! Maecenas gravida lacus. Lorem etiam sit amet convallis erat.</p>
+                    <p class="contact-description">Partner with us to transform your digital presence. Our team of experts is ready to bring your vision to life with cutting-edge technology and creative solutions.</p>
 
                     <div class="social-links">
-                        <a href="https://www.facebook.com/matconprodltd/" target="_blank"></a><i class="fab fa-facebook"></i></a>
-                        {# <a href="#"><i class="fab fa-twitter"></i></a> #}
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/matconprodltd/" target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Follow us on VK">
+                            <i class="fab fa-vk" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Subscribe to our YouTube channel">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
 
                 <div class="contact-details">
                     <div class="contact-column">
-                        <h4>CALL US</h4>
+                        <h3>CALL US</h3>
                         <p>+44 (0)1 234 567-890</p>
 
-                        <h4>LOCATION</h4>
+                        <h3>LOCATION</h3>
                         <p>123 Rock Street<br>Richmond, North Yorkshire DL8 9WQ</p>
 
-                        <h4>OUR TOP SERVICES</h4>
+                        <h3>OUR TOP SERVICES</h3>
                         <ul class="services-list">
                             <li><i class="fas fa-check"></i> Consulting</li>
                             <li><i class="fas fa-check"></i> Coaching</li>
@@ -145,22 +163,29 @@
                 </div>
 
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" aria-label="Contact form">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your Name" required aria-required="true">
                         </div>
 
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Enter a valid email address" required>
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter a valid email address" required aria-required="true">
                         </div>
 
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
                         </div>
 
                         <button type="submit" class="submit-button">
                             <span>SUBMIT</span>
                         </button>
+
+                        <div class="form-success" id="form-success" role="status" aria-live="polite" style="display: none;">
+                            <p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -171,7 +196,8 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <script src="script.js"></script>
+    <script src="./assets/scripts/script.js"></script>
 </body>
 </html>

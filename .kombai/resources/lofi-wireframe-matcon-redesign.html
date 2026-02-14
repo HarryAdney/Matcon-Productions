@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcon Productions - Redesign Wireframe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .wireframe-title {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid #333;
+            margin-bottom: 30px;
+        }
+
+        .wireframe-title h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .wireframe-title p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border: 2px dashed #999;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .section-label {
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Component tags */
+        .component-tag {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tag-reuse {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .tag-new {
+            background: #FF9800;
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            background: #000;
+            padding: 15px 20px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo-box {
+            width: 200px;
+            height: 60px;
+            border: 2px solid #fff;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            background: #333;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #ccc 0%, #999 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border: 2px solid #666;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: #fff;
+            border: 3px solid #333;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Stats Section - NEW */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .stat-card {
+            padding: 30px;
+            border: 2px solid #999;
+            background: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border: 2px solid #999;
+            background: #fff;
+            position: relative;
+        }
+
+        .icon-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #ccc;
+            border: 2px solid #666;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Ventures Section */
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .venture-card {
+            border: 2px solid #999;
+            background: #fff;
+            position: relative;
+        }
+
+        .venture-image {
+            height: 200px;
+            background: #e0e0e0;
+            border-bottom: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .venture-content {
+            padding: 25px;
+        }
+
+        .venture-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .venture-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .venture-link {
+            color: #333;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #ddd;
+            padding: 40px;
+            border: 2px solid #999;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            gap: 30px;
+        }
+
+        .contact-info h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border: 2px solid #333;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .form-field {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #999;
+            background: #fff;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #999;
+            background: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            padding: 15px 40px;
+            background: #fff;
+            border: 3px solid #333;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #000;
+        }
+
+        /* Responsive indicators */
+        .mobile-note {
+            background: #ffffcc;
+            border: 2px solid #ffcc00;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-title">
+        <h1>Matcon Productions - Redesign Wireframe</h1>
+        <p>Modern layout with improved accessibility, navigation, and user engagement features</p>
+    </div>
+
+    <!-- Header with Navigation -->
+    <div class="section">
+        <div class="section-label">HEADER - Sticky Navigation</div>
+        <!-- REUSABLE: Could extract as Header component -->
+        <div class="header" style="position: relative;">
+            <span class="component-tag tag-new" title="New component: Header with navigation">✨ NEW: NavigationHeader</span>
+            <div class="logo-box">[LOGO]</div>
+            <div class="nav-menu">
+                <div class="nav-item">About</div>
+                <div class="nav-item">Services</div>
+                <div class="nav-item">Ventures</div>
+                <div class="nav-item">Contact</div>
+            </div>
+        </div>
+        <div class="mobile-note">
+            <strong>Mobile:</strong> Navigation collapses to hamburger menu. Logo reduces size. Touch targets: 44x44px minimum.
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="section">
+        <div class="section-label">HERO SECTION - Main CTA</div>
+        <!-- REUSABLE: Hero pattern can be extracted -->
+        <div class="hero" style="position: relative;">
+            <span class="component-tag tag-new" title="New component: Hero with gradient background">✨ NEW: HeroSection</span>
+            <h1>Crafting Digital Experiences</h1>
+            <p>Innovative solutions for education, media, and property industries</p>
+            <div class="cta-button">Get In Touch</div>
+        </div>
+        <div class="mobile-note">
+            <strong>Mobile:</strong> Font sizes reduce. Vertical padding adjusts. Button remains prominent.
+        </div>
+    </div>
+
+    <!-- NEW: Stats Section -->
+    <div class="section">
+        <div class="section-label">STATS SECTION - Social Proof (NEW)</div>
+        <div style="position: relative;">
+            <span class="component-tag tag-new" title="New component: Statistics display cards">✨ NEW: StatsSection</span>
+            <div class="stats-grid">
+                <!-- NEW COMPONENT: StatCard -->
+                <div class="stat-card" style="position: relative;">
+                    <span class="component-tag tag-new" title="New component: Individual stat card">✨ NEW: StatCard</span>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Industry Sectors</div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-note">
+            <strong>Mobile:</strong> Grid changes to 2x2 layout. Cards stack on very small screens.
+        </div>
+    </div>
+
+    <!-- About & Services Section -->
+    <div class="section">
+        <div class="section-label">ABOUT & SERVICES - Core Offerings</div>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="font-size: 36px; margin-bottom: 10px;">About Matcon Productions</h2>
+            <p style="font-size: 16px; color: #666; max-width: 800px; margin: 0 auto;">
+                We are a creative digital agency specializing in delivering innovative solutions across multiple sectors.
+            </p>
+        </div>
+
+        <div style="position: relative;">
+            <span class="component-tag tag-new" title="Reusable grid layout for services">🔄 REUSE: ServiceCard Pattern</span>
+            <div class="services-grid">
+                <!-- REUSABLE: ServiceCard component -->
+                <div class="service-card" style="position: relative;">
+                    <span class="component-tag tag-new" title="New component: Service card with icon">✨ NEW: ServiceCard</span>
+                    <div class="icon-placeholder">📚</div>
+                    <h3>Education</h3>
+                    <p>Transforming learning experiences with interactive digital solutions tailored for educational institutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-placeholder">🎬</div>
+                    <h3>Media</h3>
+                    <p>Creating compelling digital content and media experiences that engage audiences across platforms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-placeholder">🏢</div>
+                    <h3>Property</h3>
+                    <p>Enhancing property experiences through digital innovation and smart management solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-note">
+            <strong>Mobile:</strong> Grid becomes single column. Cards stack vertically with full width.
+        </div>
+    </div>
+
+    <!-- Ventures Section -->
+    <div class="section">
+        <div class="section-label">VENTURES - Portfolio Showcase</div>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="font-size: 36px; margin-bottom: 10px;">Our Ventures</h2>
+            <p style="font-size: 16px; color: #666;">Explore our flagship projects</p>
+        </div>
+
+        <div style="position: relative;">
+            <span class="component-tag tag-new" title="Reusable venture card pattern">🔄 REUSE: VentureCard Pattern</span>
+            <div class="ventures-grid">
+                <!-- REUSABLE: VentureCard component -->
+                <div class="venture-card" style="position: relative;">
+                    <span class="component-tag tag-new" title="New component: Venture showcase card">✨ NEW: VentureCard</span>
+                    <div class="venture-image">[Psychaesthesia Logo - 400x250]</div>
+                    <div class="venture-content">
+                        <h3>Psychaesthesia</h3>
+                        <p>An immersive digital platform exploring the intersection of psychology and sensory experiences.</p>
+                        <a href="#" class="venture-link">Visit Psychaesthesia →</a>
+                    </div>
+                </div>
+                <div class="venture-card">
+                    <div class="venture-image">[New Eleusis Logo - 400x250]</div>
+                    <div class="venture-content">
+                        <h3>New Eleusis</h3>
+                        <p>A modern interpretation of ancient wisdom, creating digital experiences that connect audiences.</p>
+                        <a href="#" class="venture-link">Visit New Eleusis →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-note">
+            <strong>Mobile:</strong> Cards stack vertically. Image height reduces to 180px for faster loading.
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section">
+        <div class="section-label">CONTACT - Multi-column Layout with Form</div>
+        <div class="contact-section">
+            <div style="position: relative;">
+                <span class="component-tag tag-new" title="New component: Contact section with grid">✨ NEW: ContactSection</span>
+                <div class="contact-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h2>Get in touch</h2>
+                        <p style="font-weight: bold; margin-top: 15px;">WE BELIEVE IN<br>INNOVATION AND<br>CREATIVE PROBLEM<br>SOLVING.</p>
+                        <div class="social-icons">
+                            <!-- NEW: Accessible social icons with labels -->
+                            <div class="social-icon" style="position: relative;">
+                                <span class="component-tag tag-new" title="Accessible icon with aria-label" style="font-size: 8px; padding: 2px 4px;">✨ Accessible</span>
+                                FB
+                            </div>
+                            <div class="social-icon">IG</div>
+                            <div class="social-icon">YT</div>
+                            <div class="social-icon">VK</div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div>
+                        <h4 style="margin-bottom: 10px; font-size: 14px;">CALL US</h4>
+                        <p style="margin-bottom: 20px;">+44 (0)1 234 567-890</p>
+
+                        <h4 style="margin-bottom: 10px; font-size: 14px;">LOCATION</h4>
+                        <p style="margin-bottom: 20px;">123 Rock Street<br>Richmond, North Yorkshire</p>
+
+                        <h4 style="margin-bottom: 10px; font-size: 14px;">TOP SERVICES</h4>
+                        <ul style="list-style: none;">
+                            <li>✓ Consulting</li>
+                            <li>✓ Coaching</li>
+                            <li>✓ Development</li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div style="position: relative;">
+                        <span class="component-tag tag-new" title="New component: Accessible contact form">✨ NEW: ContactForm</span>
+                        <form>
+                            <div class="form-field">
+                                <label class="form-label" for="name">Name *</label>
+                                <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="message">Message *</label>
+                                <textarea id="message" class="form-textarea" placeholder="Your message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-note">
+            <strong>Mobile:</strong> Grid becomes single column. Form appears last. Social icons maintain 44x44px touch targets.
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="section">
+        <div class="section-label">FOOTER - Copyright & Links</div>
+        <!-- REUSABLE: Footer component -->
+        <div class="footer" style="position: relative;">
+            <span class="component-tag tag-new" title="Simple footer component">✨ NEW: Footer</span>
+            <p>&copy; 2026 Matcon Productions Limited. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Implementation Notes -->
+    <div class="section" style="background: #e8f5e9; border-color: #4CAF50;">
+        <div class="section-label" style="background: #4CAF50;">IMPLEMENTATION NOTES</div>
+        <h3 style="margin-bottom: 15px;">Key Improvements in This Redesign:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li><strong>✨ New Navigation:</strong> Added horizontal navigation menu for better UX and discoverability</li>
+            <li><strong>✨ Stats Section:</strong> Added social proof section to build credibility and trust</li>
+            <li><strong>♿ Accessibility:</strong> All form fields have visible labels (not just placeholders)</li>
+            <li><strong>♿ Touch Targets:</strong> All interactive elements are minimum 44x44px for mobile</li>
+            <li><strong>♿ Social Icons:</strong> All icons will have aria-labels and proper text alternatives</li>
+            <li><strong>📱 Responsive:</strong> Clear mobile breakpoint strategy with stacking layouts</li>
+            <li><strong>🎨 Semantic HTML:</strong> Proper heading hierarchy (h1 → h2 → h3 → h4)</li>
+            <li><strong>🏗️ Landmarks:</strong> Use semantic HTML5 tags (header, nav, main, section, footer) with ARIA roles</li>
+        </ul>
+
+        <h3 style="margin: 25px 0 15px;">Components to Create:</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li><strong>NavigationHeader:</strong> Sticky header with responsive menu (new)</li>
+            <li><strong>HeroSection:</strong> Hero with gradient and CTA (existing pattern, enhance)</li>
+            <li><strong>StatsSection:</strong> 4-column stats grid (new)</li>
+            <li><strong>StatCard:</strong> Individual statistic display (new)</li>
+            <li><strong>ServiceCard:</strong> Service offering with icon (existing pattern, enhance accessibility)</li>
+            <li><strong>VentureCard:</strong> Portfolio item showcase (existing pattern, enhance)</li>
+            <li><strong>ContactSection:</strong> 3-column contact layout (new)</li>
+            <li><strong>ContactForm:</strong> Accessible form with proper labels (new)</li>
+            <li><strong>Footer:</strong> Simple copyright footer (existing)</li>
+        </ul>
+    </div>
+</body>
+</html>
