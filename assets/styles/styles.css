@@ -102,7 +102,7 @@ body {
 
 /* Header Styles */
 .header {
-    background-color: var(--text-primary);
+    background-color: #000;
     border-bottom: 1px solid var(--bg-dark);
     padding: var(--spacing-md) 0;
     position: sticky;
@@ -223,7 +223,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-color: var(--primary-color);
+    background-image: url('../img/background.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -253,13 +257,13 @@ body {
     .hero::before {
         animation: none;
     }
-    
+
     .hero-headline,
     .hero-subtext,
     .hero-cta {
         animation: none;
     }
-    
+
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
@@ -267,14 +271,14 @@ body {
     }
 }
 
-.hero-overlay {
+/* .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(107, 70, 193, 0.8) 100%);
-}
+} */
 
 .hero-content {
     position: relative;
@@ -834,6 +838,8 @@ body {
 
     .hero {
         min-height: 70vh;
+        background-position: center center;
+        background-size: cover;
     }
 
     .hero-headline {
@@ -879,6 +885,8 @@ body {
 
     .hero {
         min-height: 60vh;
+        background-position: center center;
+        background-size: cover;
     }
 
     .hero-headline {
