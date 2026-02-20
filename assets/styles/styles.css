@@ -419,6 +419,10 @@ body {
 .ventures-section {
     padding: var(--spacing-2xl) 0;
     background-color: var(--bg-primary);
+    background-image: url('../img/background-ventures.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .ventures-section > .container > h2 {
