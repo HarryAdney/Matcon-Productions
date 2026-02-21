@@ -10,6 +10,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="./assets/styles/styles.css">
+
+<!-- Favicons-->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Matcon Productions Ltd." />
+<link rel="manifest" href="/site.webmanifest" />
     </head>
 
     <body>
@@ -138,7 +146,7 @@
                                 <a href="https://www.facebook.com/matconprodltd/" target="_blank" aria-label="Follow us on Facebook">
                                     <i class="fab fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" aria-label="Follow us on Instagram">
+                                <a href="#" aria-label="Follow us on Instagram"> <!-- Add social media links -->
                                     <i class="fab fa-instagram" aria-hidden="true"></i>
                                 </a>
                                 <a href="#" aria-label="Follow us on X">
@@ -168,15 +176,22 @@
                         </div>
 
                         <div class="contact-form-container">
-                            <form id="contact-form" class="contact-form" aria-label="Contact form">
+                            <form action="https://formsubmit.co/info@matconproductions.com" method="POST" id="contact-form" class="contact-form" aria-label="Contact form">
+                                <!-- Formsubmit.co configuration -->
+                                <input type="hidden" name="_subject" value="New Contact Form Submission - Matcon Productions">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="text" name="_honey" value="" style="display:none">
+                                <input type="hidden" name="_next" value="https://matconproductions.com/#contact">
+
                                 <div class="form-group">
                                     <label for="name" class="form-label">Name *</label>
-                                    <input type="text" id="name" name="name" placeholder="Enter your Name" required aria-required="true">
+                                    <input type="text" id="name" autocomplete="name" name="name" placeholder="Enter your Name" required aria-required="true">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email" class="form-label">Email *</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter a valid email address" required aria-required="true">
+                                    <input type="email" id="email" autocomplete="email" name="email" placeholder="Enter a valid email address" required aria-required="true">
                                 </div>
 
                                 <div class="form-group">
