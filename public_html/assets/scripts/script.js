@@ -11,41 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contact form submission
-    const contactForm = document.getElementById('contact-form');
-    const formSuccess = document.getElementById('form-success');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Create mailto link
-            const mailtoLink = `mailto:info@matconproductions.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}%0AEmail: ${email}%0A%0A${message}`)}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
-
-            // Show success message
-            if (formSuccess) {
-                formSuccess.style.display = 'block';
-                
-                // Reset form after a brief delay
-                setTimeout(() => {
-                    contactForm.reset();
-                }, 1000);
-
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    formSuccess.style.display = 'none';
-                }, 5000);
-            }
-        });
-    }
-
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
@@ -54,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (href !== '#' && href !== '#main-content' && document.querySelector(href)) {
                 e.preventDefault();
                 const target = document.querySelector(href);
-                
+
                 // Close mobile menu if open
                 if (navMenu && navMenu.classList.contains('mobile-menu-open')) {
                     navMenu.classList.remove('mobile-menu-open');
                     mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 }
-                
+
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -105,4 +70,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lastScroll = currentScroll;
     });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    const submitButton = contactForm ? contactForm.querySelector('.submit-button') : null;
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Hide any previous success message
+            if (formSuccess) {
+                formSuccess.style.display = 'none';
+            }
+
+            // Disable submit button and show loading state
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.setAttribute('aria-busy', 'true');
+                const originalText = submitButton.querySelector('span').textContent;
+                submitButton.querySelector('span').textContent = 'SENDING...';
+            }
+
+            // Collect form data
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Show success message
+                    if (formSuccess) {
+                        formSuccess.style.display = 'block';
+                        formSuccess.focus();
+                    }
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    // Show error message
+                    let errorMessage = result.message || 'An error occurred. Please try again.';
+                    if (result.errors && result.errors.length > 0) {
+                        errorMessage = result.errors.join(' ');
+                    }
+                    alert(errorMessage);
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Sorry, there was a problem sending your message. Please try again later or contact us directly.');
+            } finally {
+                // Re-enable submit button
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.setAttribute('aria-busy', 'false');
+                    submitButton.querySelector('span').textContent = 'SUBMIT';
+                }
+            }
+        });
+    }
 });

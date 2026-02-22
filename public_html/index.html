@@ -11,13 +11,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="./assets/styles/styles.css">
 
-<!-- Favicons-->
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Matcon Productions Ltd." />
-<link rel="manifest" href="/site.webmanifest" />
+        <!-- Favicons-->
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Matcon Productions Ltd." />
+        <link rel="manifest" href="/site.webmanifest" />
     </head>
 
     <body>
@@ -176,13 +176,9 @@
                         </div>
 
                         <div class="contact-form-container">
-                            <form action="https://formsubmit.co/info@matconproductions.com" method="POST" id="contact-form" class="contact-form" aria-label="Contact form">
-                                <!-- Formsubmit.co configuration -->
-                                <input type="hidden" name="_subject" value="New Contact Form Submission - Matcon Productions">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="table">
-                                <input type="text" name="_honey" value="" style="display:none">
-                                <input type="hidden" name="_next" value="https://matconproductions.com/#contact">
+                            <form action="./contact-handler.php" method="POST" id="contact-form" class="contact-form" aria-label="Contact form" novalidate>
+
+                                <input type="text" name="_honey" value="" style="display:none" tabindex="-1" autocomplete="off">
 
                                 <div class="form-group">
                                     <label for="name" class="form-label">Name *</label>
@@ -207,6 +203,7 @@
                                     <p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
                                 </div>
                             </form>
+
                         </div>
                     </div>
 
