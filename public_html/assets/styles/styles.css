@@ -26,7 +26,8 @@
     --warning-color: #ed8936;
 
     /* Typography */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Barlow', sans-serif;
+    --font-body: 'Barlow Condensed', sans-serif;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -36,6 +37,8 @@
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
+
+/* Google Fonts */
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -68,13 +71,17 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
 }
 
 /* Skip to main content link */
@@ -309,7 +316,7 @@ body {
 .hero-cta {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background-color: white;
+    background-color: #f9c74f;
     color: var(--primary-color);
     text-decoration: none;
     border-radius: var(--radius-lg);
@@ -340,7 +347,7 @@ body {
 /* About Section Styles */
 .about-section {
     padding: var(--spacing-2xl) 0;
-    background-color: var(--bg-secondary);
+    /* background-color: var(--bg-secondary); */
 }
 
 .about-intro {
@@ -448,7 +455,7 @@ body {
 }
 
 .venture-card {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -470,7 +477,7 @@ body {
 .venture-image {
     height: 250px;
     overflow: hidden;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .venture-logo-container {
@@ -578,7 +585,7 @@ body {
 /* Contact Section Styles */
 .contact-section {
     padding: var(--spacing-2xl) 0;
-    background-color: var(--bg-dark);
+    background-color: #000;
     color: white;
 }
 
@@ -703,7 +710,7 @@ body {
     padding: var(--spacing-md);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-sm);
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-size: var(--font-size-sm);
     transition: all var(--transition-fast);
     background-color: rgba(255, 255, 255, 0.95);
@@ -739,7 +746,7 @@ body {
     color: var(--text-primary);
     border: none;
     border-radius: var(--radius-lg);
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-size: var(--font-size-base);
     font-weight: 600;
     cursor: pointer;
