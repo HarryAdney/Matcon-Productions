@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     padding: 1rem 2.5rem;
     background-color: #f9c74f;
-    color: var(--text-primary);
+    color: var(--primary-color);
     text-decoration: none;
     border-radius: var(--radius-lg);
     font-weight: 600;
@@ -329,8 +329,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-cta:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-    background-color: #f3b73e;
+    box-shadow: var(--shadow-xl);
+    background-color: var(--bg-secondary);
 }
 
 @keyframes fadeInUp {
