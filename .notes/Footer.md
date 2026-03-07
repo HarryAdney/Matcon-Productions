@@ -1,1 +1,1 @@
-Waiting for repluy from Matt, re footer background imnage
+Waiting for reply from Matt, re footer background image
