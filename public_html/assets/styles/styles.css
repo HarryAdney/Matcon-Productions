@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--font-size-xl);
     line-height: 1.6;
     margin-bottom: var(--spacing-lg);
-    color: rgba(255, 255, 255, 0.95);
+    color: #fff;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -592,6 +592,7 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
 }
 
+
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -614,7 +615,9 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
     margin-bottom: var(--spacing-lg);
 }
-
+.text-magenta{
+color:#b24690;
+}
 .contact-description {
     font-size: var(--font-size-sm);
     line-height: 1.8;
@@ -659,7 +662,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--font-size-base);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
-    color: white;
+    color: #b24690;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
