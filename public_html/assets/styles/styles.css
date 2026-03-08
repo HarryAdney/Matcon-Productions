@@ -388,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--accent-color);
+    border-color: #0cc0df;
 }
 
 .service-card:focus-within {
@@ -399,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    background: #0cc0df;
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
@@ -466,7 +466,7 @@ h1, h2, h3, h4, h5, h6 {
 .venture-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--accent-color);
+    border-color: #0cc0df;
 }
 
 .venture-card:focus-within {
@@ -563,7 +563,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .venture-link:hover {
-    color: var(--primary-color);
+    color: #0cc0df;
     transform: translateX(4px);
 }
 
