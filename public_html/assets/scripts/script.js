@@ -1,13 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.querySelector('#nav-menu');
+
+    if (navMenu) {
+        // keep hidden by default for screen readers when closed
+        navMenu.setAttribute('aria-hidden', 'true');
+    }
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
             const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
             mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
             navMenu.classList.toggle('mobile-menu-open');
+            // update visibility state for assistive tech
+            navMenu.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
         });
     }
 
