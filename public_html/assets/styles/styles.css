@@ -553,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
 .venture-link {
     display: inline-flex;
     align-items: center;
-    color: var(--accent-color);
+    color: #0cc0df;
     text-decoration: none;
     font-weight: 600;
     font-size: var(--font-size-base);
@@ -568,7 +568,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .venture-link:focus-visible {
-    outline: 2px solid var(--accent-color);
+    outline: 2px solid color: #0cc0df;
     outline-offset: 2px;
     border-radius: var(--radius-sm);
 }
@@ -611,7 +611,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-subtitle {
     font-size: var(--font-size-lg);
     font-weight: 600;
-    color:#fff;
+    color:#ff1fa9;
     line-height: 1.6;
     margin-bottom: var(--spacing-lg);
 }
@@ -662,7 +662,7 @@ color:#b24690;
     font-size: var(--font-size-base);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
-    color: #b24690;
+    color: #FF1FA9;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -818,7 +818,7 @@ color:#b24690;
 
 .footer-integrated p {
     font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.6);
+    color: #FFF;
     margin: 0;
 }
 
